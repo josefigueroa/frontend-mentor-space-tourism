@@ -11,3 +11,16 @@
 		@content;
 	}
 }
+
+@mixin background-section($section) {	
+	background-image: url('#{$img-path}/#{$section}/background-#{$section}-mobile.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	@include breakpoint('medium'){
+		background-image: url('#{$img-path}/#{$section}/background-#{$section}-tablet.jpg');
+	}
+	@include breakpoint('xxlarge'){
+		background-image: url('#{$img-path}/#{$section}/background-#{$section}-desktop.jpg');
+	}
+}

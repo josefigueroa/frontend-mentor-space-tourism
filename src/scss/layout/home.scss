@@ -1,0 +1,5 @@
+@use '../abstratcs/' as *;
+
+.section-home{
+  @include background-section('home');
+}

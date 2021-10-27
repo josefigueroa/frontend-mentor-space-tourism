@@ -1,9 +1,14 @@
 @use '../abstratcs/' as *;
 
 body{
-  background-color: $body-bg;
-  font-family: $font-family-base;
+  background-color: var(--white);
+  font-family: var(--font-family-barlow);
   font-size: $font-size-base;
   font-weight: $font-weight-base;
-  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+p{
+  font-size: rem(16);
+  line-height: rem(28);
 }

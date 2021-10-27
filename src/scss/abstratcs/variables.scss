@@ -30,16 +30,27 @@ $spacer: (
   5: ($spacer * 3)
 );
 
-$theme-fonts: (
-	300: 'Light',
-	400: 'Regular',
-	500: 'Medium',
-	700: 'Bold',
-	900: 'Black'
+//COLORS
+$white: hsl(0, 0%, 100% );
+$violet: hsl(231, 77%, 90%);
+$black: hsl(230, 35%, 7%);
+
+$theme-colors: (
+	'white': $white,
+	'violet': $violet,
+	'black': $black,
 );
 
+$sections: (
+	home,
+	crew,
+	destination,
+	technology,
+);
+
+
 //BASE
-$font-family-base: Poppins;
+$font-family-base: var(--font-family-barlow);
 $font-size-base: 1rem;
 $font-weight-base: 400;
 $body-bg: #fff;
