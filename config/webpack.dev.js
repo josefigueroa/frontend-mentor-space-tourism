@@ -61,7 +61,24 @@ const devConfig = {
   module: { rules },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: './src/views/index.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'destination.html',
+      template: './src/views/destination.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'crew.html',
+      template: './src/views/crew.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'technology.html',
+      template: './src/views/technology.html',
+      chunks: ['index']
     }),
     new MiniCssExtractPlugin({
       filename: 'css/style.[contenthash].css'

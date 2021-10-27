@@ -1,0 +1,5 @@
+@use '../abstratcs/' as *;
+
+.section-technology{
+  @include background-section('technology');
+}

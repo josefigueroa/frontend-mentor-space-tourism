@@ -10,6 +10,38 @@
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body class="section-home">
- 
+  <header class="header">
+    <figure class="header__logo">
+      <img src="../img/logo.svg" alt="Logo brand">
+    </figure>
+    <div class="header__wrapper">
+      <button type="button" class="header__button" aria-label="Open menu" width="24" height="21">
+        <img src="../img/icon-hamburger.svg" alt="Menu icon">
+      </button>
+      <div class="header__menu">     
+        <div class="header__button-wrapper">
+          <button type="button" class="header__button header__button--close" aria-label="Close menu" width="24" height="21">
+            <img src="../img/icon-close.svg" alt="Menu icon">
+          </button>
+        </div>  
+        <nav class="header__nav">
+          <ul class="header__list-menu">
+            <li class="header__item-menu">
+              <a href="home.html" class="header__link-menu header__link-menu--active">Home</a>
+            </li>
+            <li class="header__item-menu">
+              <a href="destination.html" class="header__link-menu">Destination</a>
+            </li>
+            <li class="header__item-menu">
+              <a href="crew.html" class="header__link-menu">Crew</a>
+            </li>
+            <li class="header__item-menu">
+              <a href="technology.html" class="header__link-menu">Technology</a>
+            </li>
+          </ul>
+        </nav>     
+      </div>
+    </div>
+  </header>
 </body>
 </html>

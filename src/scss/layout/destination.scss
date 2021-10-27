@@ -1,0 +1,5 @@
+@use '../abstratcs/' as *;
+
+.section-destination{
+  @include background-section('destination');
+}

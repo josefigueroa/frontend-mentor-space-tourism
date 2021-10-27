@@ -1,0 +1,5 @@
+@use '../abstratcs/' as *;
+
+.section-crew{
+  @include background-section('crew');
+}
