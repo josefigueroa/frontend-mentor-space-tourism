@@ -6,9 +6,11 @@ body{
   font-size: $font-size-base;
   font-weight: $font-weight-base;
   min-height: 100vh;
+  // overflow: hidden;
 }
 
 p{
   font-size: rem(16);
   line-height: rem(28);
+  color: var(--violet);
 }

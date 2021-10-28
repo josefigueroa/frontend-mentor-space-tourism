@@ -4,26 +4,40 @@
   padding-top: rem(24);
   padding-left: rem(24);
   padding-right: rem(24);
-
+  margin-bottom: rem(48);
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include breakpoint('medium'){
+    padding-top: 0;
+    padding-left: rem(40);
+    padding-right: 0;
+    margin-bottom: rem(106);
+    height: rem(96);
+  }
   &__button{
     background-color: transparent;
     border: 0;
     box-shadow: none;
     cursor: pointer;
     padding: 0;
+    @include breakpoint('medium'){
+      display: none;
+    }
     &-wrapper{
       text-align: right;
       margin-bottom: rem(65);
+      @include breakpoint('medium'){
+        margin: 0;
+      }
     }
     &--close{
       padding-right: rem(26.45);
     }
   }
   &__menu{    
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;    
@@ -47,6 +61,31 @@
       max-width: rem(254);
       width: 100%;
     }
+    @include breakpoint('medium'){
+      position: relative;
+      transform: translateX(0);
+      max-width: 100%;
+      max-height: rem(96);
+      height: rem(96);
+      padding-top: 0;
+      padding-left: rem(48);
+      padding-right: rem(46);
+
+      display: flex;
+      align-items: center;
+      
+      &:before{
+        max-width: 100%;
+        left: 0;
+        background: rgba(255, 255, 255, 0.04);
+      }
+    }
+  }
+  &__list-menu{
+    @include breakpoint('medium'){
+     display: flex;
+     align-items: center;
+    }
   }
   &__item-menu{
     font-size: rem(16);
@@ -66,12 +105,28 @@
       margin-right: rem(11);
       font-weight: bold;
     }
+
+    @include breakpoint('medium'){
+      &:not(:last-child){
+        margin-bottom: 0;
+        margin-right: rem(37);
+      }
+      &:before{
+        content: '';
+        margin-right: 0;
+      }
+     }
   }
   &__link-menu{
     color: var(--white);
     display: block;
     position: relative;
     flex: 1;
+    @include breakpoint('medium'){
+      font-size: rem(14);
+      letter-spacing: 2.36px;
+      
+    }
     &--active{
       &:after{
         content: '';
@@ -82,6 +137,16 @@
         position: absolute;
         top: -25%;
         right: 0;
+      }
+      @include breakpoint('medium'){
+        &:after{
+          width: 100%;
+          height: 3px;
+          background: var(--white);
+          display: block;
+          position: absolute;
+          top: 52px;
+        }
       }
     }
   }
