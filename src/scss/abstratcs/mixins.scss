@@ -20,7 +20,7 @@
 	@include breakpoint('medium'){
 		background-image: url('#{$img-path}/#{$section}/background-#{$section}-tablet.jpg');
 	}
-	@include breakpoint('xxlarge'){
+	@include breakpoint('xlarge'){
 		background-image: url('#{$img-path}/#{$section}/background-#{$section}-desktop.jpg');
 	}
 }
@@ -47,6 +47,56 @@
 				transform: scale(2.1);
 				opacity: 0;
 			}  
+		}
+	}
+}
+@mixin slide-in-left($value){
+	@keyframes slide-in-left {
+		0% {
+			transform: translateX(-#{$value}px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+}
+@mixin slide-in-right($value){
+	@keyframes slide-in-right {
+		0% {
+			transform: translateX(#{$value}px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+}
+
+@mixin slide-in-bottom($value){
+	@keyframes slide-in-bottom {
+		0% {
+			transform: translateY(#{$value}px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+}
+
+@mixin slide-in-top($value){
+	@keyframes slide-in-top {
+		0% {
+			transform: translateY(-#{$value}px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
 		}
 	}
 }

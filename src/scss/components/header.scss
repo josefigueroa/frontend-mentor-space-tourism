@@ -5,17 +5,51 @@
   padding-left: rem(24);
   padding-right: rem(24);
   margin-bottom: rem(48);
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
+  animation: slide-in-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   @include breakpoint('medium'){
     padding-top: 0;
     padding-left: rem(40);
     padding-right: 0;
-    margin-bottom: rem(106);
-    height: rem(96);
+    margin-bottom: rem(106);    
   }
+  @include breakpoint('xlarge'){
+    padding-top: rem(40);
+    padding-left: rem(55);
+    padding-right: 0;
+    margin-bottom: rem(250);
+  }
+  &__wrapper{
+    @include breakpoint('medium'){
+      flex: 1;
+      max-width: rem(450);
+      
+    }
+    @include breakpoint('xlarge'){
+      max-width: rem(830);
+      position: relative;
+    }
+    @include breakpoint('xxlarge'){
+      transition: .4s;
+      &:after{
+        content: '';
+        max-width: rem(473);
+        width: 100%;
+        height: 1px;
+        background-color: var(--white);
+        opacity: .25;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: -53%;
+        z-index: 1;
+        transition: .4s;
+      }
+    }
+  }
+
   &__button{
     background-color: transparent;
     border: 0;
@@ -46,8 +80,17 @@
     padding-left: rem(32);
     max-width: rem(254);
     width: 100%;
-    transition: transform .4s;
+    transition: transform .4s ease-in-out;
     z-index: 1;
+    display: none;
+    
+    @include breakpoint('medium'){
+      display: block;
+      transition: all 1.2s;
+    }
+    &--open{
+      transform: translateX(0);
+    }
     &:before{
       content: '';
       backdrop-filter: blur(81.5485px);
@@ -80,8 +123,12 @@
         background: rgba(255, 255, 255, 0.04);
       }
     }
+    @include breakpoint('xlarge'){
+      padding-left: rem(123);
+    }
   }
   &__list-menu{
+    counter-reset: menu-counter -1;
     @include breakpoint('medium'){
      display: flex;
      align-items: center;
@@ -99,7 +146,7 @@
     }
     
     &:before{
-      content: "0" counter(menu-counter);
+      content: counter(menu-counter, decimal-leading-zero);
       color: var(--white);
       display: inline-block;
       margin-right: rem(11);
@@ -107,6 +154,7 @@
     }
 
     @include breakpoint('medium'){
+      position: relative;
       &:not(:last-child){
         margin-bottom: 0;
         margin-right: rem(37);
@@ -114,6 +162,15 @@
       &:before{
         content: '';
         margin-right: 0;
+      }
+     }
+     @include breakpoint('xlarge'){
+      &:not(:last-child){
+        margin-right: rem(48);
+      }
+      &:before{
+        content: "0" counter(menu-counter);
+        margin-right: rem(11);
       }
      }
   }
@@ -125,6 +182,25 @@
     @include breakpoint('medium'){
       font-size: rem(14);
       letter-spacing: 2.36px;
+      position: unset;
+      transition: .8s;
+      &:hover{
+        &:after{
+          content: '';
+          width: 100%;
+          height: 3px;
+          background: var(--white);
+          display: block;
+          position: absolute;
+          top: rem(54);
+          right: 0;
+          opacity: .5;
+        }
+      }
+    }
+    @include breakpoint('xlarge'){
+      font-size: rem(16);
+      letter-spacing: 2.7px;
       
     }
     &--active{
@@ -145,9 +221,11 @@
           background: var(--white);
           display: block;
           position: absolute;
-          top: 52px;
+          top: rem(54);
         }
       }
     }
   }
 }
+
+@include slide-in-top(50);

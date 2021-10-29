@@ -1,0 +1,8 @@
+@use '../abstratcs/' as *;
+
+.section-wrapper{
+  @include breakpoint('xlarge'){
+    display: flex;
+    align-items: center;    
+  }
+}

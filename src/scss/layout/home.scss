@@ -7,6 +7,7 @@
 .main-text{
   color: var(--white);
   margin-bottom: rem(81);
+  animation: slide-in-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   &__subtitle{
     text-transform: uppercase;
     margin-bottom: rem(16);
@@ -15,6 +16,16 @@
     display: block;
     font-family: var(--font-family-barlow);
     color: var(--violet);
+    @include breakpoint('medium'){
+      font-size: rem(20);
+      letter-spacing: 3.38px;
+    }
+    @include breakpoint('xlarge'){
+      font-size: rem(28);
+      letter-spacing: 4.72px;
+      text-align: left;
+    }
+   
   }
   &__title{
     text-transform: uppercase;
@@ -24,11 +35,29 @@
     margin-bottom: rem(16);
     margin-top: 0;
     font-weight: 400;
+    @include breakpoint('medium'){
+      font-size: rem(150);
+    }
+    @include breakpoint('xlarge'){
+      text-align: left;
+    }
   }
   &__desc{
     text-align: center;
     font-size: rem(15);
     line-height: rem(25);
+    @include breakpoint('medium'){
+      font-size: rem(16);
+      line-height: rem(28);
+      max-width: rem(448);
+      margin: 0 auto;
+    }
+    @include breakpoint('xlarge'){
+      font-size: rem(18);
+      line-height: rem(32);
+      margin: 0;
+      text-align: left;
+    }
   } 
 }
 
@@ -38,11 +67,22 @@
   background-color: var(--white);
   border-radius: 50%;
   margin: 0 auto;
+  animation: slide-in-right 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  @include breakpoint('medium'){
+    width: rem(242);
+    height: rem(242);
+  }
+  @include breakpoint('xlarge'){
+    width: rem(274);
+    height: rem(274);
+    margin: 0;
+    margin-left: auto;
+  }
   &:hover::after{
     content: '';
     animation: pulse 2000ms infinite;
@@ -59,7 +99,15 @@
     font-size: rem(20);
     letter-spacing: 1.25px;
     text-transform: uppercase;
+    @include breakpoint('medium'){
+      font-size: rem(32);
+      letter-spacing: 2px;
+    }
   }
 }
 
 @include pulse-effect();
+@include slide-in-left(50);
+@include slide-in-right(50);
+
+

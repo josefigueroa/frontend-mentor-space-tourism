@@ -3,4 +3,12 @@
 .container{
   padding-left: rem(24);
   padding-right: rem(24);
+  max-width: rem(1111);
+  width: 100%;
+  margin: 0 auto;
+  @include breakpoint('xlarge'){
+    padding-left: 0;
+    padding-right: 0;
+    
+  }
 }
