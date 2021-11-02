@@ -50,53 +50,65 @@
 		}
 	}
 }
-@mixin slide-in-left($value){
-	@keyframes slide-in-left {
-		0% {
-			transform: translateX(-#{$value}px);
-			opacity: 0;
-		}
-		100% {
-			transform: translateX(0);
-			opacity: 1;
-		}
-	}
-}
-@mixin slide-in-right($value){
-	@keyframes slide-in-right {
-		0% {
-			transform: translateX(#{$value}px);
-			opacity: 0;
-		}
-		100% {
-			transform: translateX(0);
-			opacity: 1;
-		}
-	}
-}
 
-@mixin slide-in-bottom($value){
-	@keyframes slide-in-bottom {
-		0% {
-			transform: translateY(#{$value}px);
-			opacity: 0;
+@mixin keyframes($name){
+	@if($name == 'slide-in-top'){
+		@keyframes #{$name}{
+			0% {
+				transform: translateY(-50px);
+				opacity: 0;
+			}
+			100% {
+				transform: translateY(0);
+				opacity: 1;
+			}
 		}
-		100% {
-			transform: translateY(0);
-			opacity: 1;
+	}@else if ($name == 'slide-in-bottom'){
+		@keyframes slide-in-bottom {
+			0% {
+				transform: translateY(50px);
+				opacity: 0;
+			}
+			100% {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	}@else if ($name == 'slide-in-left'){
+		@keyframes slide-in-left {
+			0% {
+				transform: translateX(-50px);
+				opacity: 0;
+			}
+			100% {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+	}@else if ($name == 'slide-in-right'){
+		@keyframes slide-in-right {
+			0% {
+				transform: translateX(50px);
+				opacity: 0;
+			}
+			100% {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+	}@else if ($name == 'fade-in'){
+		@keyframes fade-in {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+	}@else{
+		@keyframes #{$name} {
+			@content
 		}
 	}
-}
 
-@mixin slide-in-top($value){
-	@keyframes slide-in-top {
-		0% {
-			transform: translateY(-#{$value}px);
-			opacity: 0;
-		}
-		100% {
-			transform: translateY(0);
-			opacity: 1;
-		}
-	}
 }

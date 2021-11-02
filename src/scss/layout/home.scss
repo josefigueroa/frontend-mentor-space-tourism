@@ -8,6 +8,7 @@
   color: var(--white);
   margin-bottom: rem(81);
   animation: slide-in-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  @include keyframes('slide-in-left');
   &__subtitle{
     text-transform: uppercase;
     margin-bottom: rem(16);
@@ -68,7 +69,7 @@
   border-radius: 50%;
   margin: 0 auto;
   animation: slide-in-right 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
+  @include keyframes('slide-in-right');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,6 +94,7 @@
     opacity: .1;
     position: absolute;
     border-radius: 50%;
+    @include pulse-effect();
   }
   &__text{
     font-family: var(--font-family-bellefair);
@@ -105,9 +107,5 @@
     }
   }
 }
-
-@include pulse-effect();
-@include slide-in-left(50);
-@include slide-in-right(50);
 
 

@@ -3,6 +3,7 @@
 .section-wrapper{
   @include breakpoint('xlarge'){
     display: flex;
-    align-items: center;    
+    align-items: center;   
+    column-gap: rem(157); 
   }
 }
