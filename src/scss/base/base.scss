@@ -8,6 +8,10 @@ body{
   min-height: 100vh;
 }
 
+a{
+  color: var(--white);
+}
+
 p{
   font-size: rem(16);
   line-height: rem(28);

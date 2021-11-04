@@ -25,13 +25,25 @@
     font-size: rem(14);
     text-transform: uppercase;
     letter-spacing: rem(2.36);
+    cursor: pointer;
+    transition: border .4s;
+    border-bottom: 3px solid transparent;
+    padding-bottom: rem(8);
+    @include breakpoint('medium'){
+      padding-bottom: rem(12);
+    }   
+    &:hover{
+      color: var(--violet);
+      border-bottom: 3px solid rgba(255,255,255, .5);
+      transition: border .4s;
+    }
     &--active{
       color: var(--white);
       border-bottom: 3px solid var(--white);
-      padding-bottom: rem(8);
-      @include breakpoint('medium'){
-        padding-bottom: rem(12);
-      }   
+      &:hover{
+        color: var(--white);
+        border-bottom: 3px solid var(--white);
+      }  
     }
     @include breakpoint('medium'){
       font-size: rem(16);
