@@ -2,7 +2,7 @@
 
 :root{
   @each $key, $val in $theme-colors {
-    --#{$key} : #{$val};
+    --#{$key}: #{$val};
   }
 
   --font-family-bellefair: 'bellefair';

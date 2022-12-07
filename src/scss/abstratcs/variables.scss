@@ -33,11 +33,13 @@ $spacer: (
 //COLORS
 $white: hsl(0, 0%, 100% );
 $violet: hsl(231, 77%, 90%);
+$gray: hsl(231, 15%, 26%);
 $black: hsl(230, 35%, 7%);
 
 $theme-colors: (
 	'white': $white,
 	'violet': $violet,
+	'gray': $gray,
 	'black': $black,
 );
 
