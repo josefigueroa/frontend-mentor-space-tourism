@@ -32,7 +32,7 @@ const rulesForImg = {
   test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
   type: 'asset/resource',
   generator: {
-    filename: 'img/[hash][ext][query]'
+    filename: 'img/[name][ext][query]'
   }
 };
 
