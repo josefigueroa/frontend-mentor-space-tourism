@@ -29,7 +29,7 @@ const rulesForCss = {
 };
 
 const rulesForImg = {
-  test: /\.(png|svg|jpg|jpeg|gif)$/i,
+  test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
   type: 'asset/resource',
   generator: {
     filename: 'img/[hash][ext][query]'
@@ -60,7 +60,20 @@ const prodConfig = {
   module: { rules },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: './src/views/index.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'crew.html',
+      template: './src/views/crew.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'technology.html',
+      template: './src/views/technology.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'destination.html',
+      template: './src/views/destination.html',
     }),
     new MiniCssExtractPlugin({
       filename: 'css/style.[contenthash].css'
