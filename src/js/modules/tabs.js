@@ -43,7 +43,7 @@ export class Tabs{
 
 
     setTimeout(() =>{
-      this.imgSectionImgEl.setAttribute('src', `../img/image-${id}.${extenxion}`);
+      this.imgSectionImgEl.setAttribute('src', `../img/${fileImg}/image-${id}.${extenxion}`);
       this.imgSectionImgEl.setAttribute('alt', `${id}`);
       this.imgSectionEl.classList.add('section__img--show');
     }, 100);    
