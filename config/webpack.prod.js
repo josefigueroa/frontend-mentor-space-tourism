@@ -2,6 +2,7 @@ const config = require('./webpack.common.js');
 const merge = require('merge-descriptors');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const rulesForHTML =   {
   test:/\.html$/,
@@ -59,6 +60,14 @@ const prodConfig = {
   mode: 'production',
   module: { rules },
   plugins: [
+    new CopyPlugin(
+      [
+        { 
+          from: "./src/img/", 
+          to: "./img" 
+        }
+      ]    
+    ),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/views/index.html',
@@ -77,7 +86,8 @@ const prodConfig = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/style.[contenthash].css'
-    })
+    }),
+    
   ],
 }
 
